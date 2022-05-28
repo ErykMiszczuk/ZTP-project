@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stocks",
+  "info": {
+    "singularName": "stock",
+    "pluralName": "stocks",
+    "displayName": "Stock"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Identyfikator": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "dateShipped": {
+      "type": "date"
+    },
+    "dateSelled": {
+      "type": "date"
+    }
+  }
+}
