@@ -6,13 +6,13 @@ defmodule HelloWeb.StockControllerTest do
   alias Hello.Shop.Stock
 
   @create_attrs %{
-    dateSelled: ~N[2022-05-26 20:26:00],
-    dateShipped: ~N[2022-05-26 20:26:00],
+    dateSelled: ~N[2022-06-04 19:36:00],
+    dateShipped: ~N[2022-06-04 19:36:00],
     name: "some name"
   }
   @update_attrs %{
-    dateSelled: ~N[2022-05-27 20:26:00],
-    dateShipped: ~N[2022-05-27 20:26:00],
+    dateSelled: ~N[2022-06-05 19:36:00],
+    dateShipped: ~N[2022-06-05 19:36:00],
     name: "some updated name"
   }
   @invalid_attrs %{dateSelled: nil, dateShipped: nil, name: nil}
@@ -37,8 +37,8 @@ defmodule HelloWeb.StockControllerTest do
 
       assert %{
                "id" => ^id,
-               "dateSelled" => "2022-05-26T20:26:00",
-               "dateShipped" => "2022-05-26T20:26:00",
+               "dateSelled" => "2022-06-04T19:36:00",
+               "dateShipped" => "2022-06-04T19:36:00",
                "name" => "some name"
              } = json_response(conn, 200)["data"]
     end
@@ -60,8 +60,8 @@ defmodule HelloWeb.StockControllerTest do
 
       assert %{
                "id" => ^id,
-               "dateSelled" => "2022-05-27T20:26:00",
-               "dateShipped" => "2022-05-27T20:26:00",
+               "dateSelled" => "2022-06-05T19:36:00",
+               "dateShipped" => "2022-06-05T19:36:00",
                "name" => "some updated name"
              } = json_response(conn, 200)["data"]
     end

@@ -7,14 +7,14 @@ defmodule HelloWeb.OrderControllerTest do
 
   @create_attrs %{
     amount: "120.5",
-    dateCreated: ~N[2022-05-26 20:31:00],
-    dateFinished: ~N[2022-05-26 20:31:00],
+    dateCreated: ~N[2022-06-04 17:58:00],
+    dateFinished: ~N[2022-06-04 17:59:00],
     discount: "120.5"
   }
   @update_attrs %{
     amount: "456.7",
-    dateCreated: ~N[2022-05-27 20:31:00],
-    dateFinished: ~N[2022-05-27 20:31:00],
+    dateCreated: ~N[2022-06-05 17:59:00],
+    dateFinished: ~N[2022-06-05 17:59:00],
     discount: "456.7"
   }
   @invalid_attrs %{amount: nil, dateCreated: nil, dateFinished: nil, discount: nil}
@@ -24,7 +24,7 @@ defmodule HelloWeb.OrderControllerTest do
   end
 
   describe "index" do
-    test "lists all order", %{conn: conn} do
+    test "lists all orders", %{conn: conn} do
       conn = get(conn, Routes.order_path(conn, :index))
       assert json_response(conn, 200)["data"] == []
     end
@@ -40,8 +40,8 @@ defmodule HelloWeb.OrderControllerTest do
       assert %{
                "id" => ^id,
                "amount" => "120.5",
-               "dateCreated" => "2022-05-26T20:31:00",
-               "dateFinished" => "2022-05-26T20:31:00",
+               "dateCreated" => "2022-06-04T17:58:00",
+               "dateFinished" => "2022-06-04T17:59:00",
                "discount" => "120.5"
              } = json_response(conn, 200)["data"]
     end
@@ -64,8 +64,8 @@ defmodule HelloWeb.OrderControllerTest do
       assert %{
                "id" => ^id,
                "amount" => "456.7",
-               "dateCreated" => "2022-05-27T20:31:00",
-               "dateFinished" => "2022-05-27T20:31:00",
+               "dateCreated" => "2022-06-05T17:59:00",
+               "dateFinished" => "2022-06-05T17:59:00",
                "discount" => "456.7"
              } = json_response(conn, 200)["data"]
     end

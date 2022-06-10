@@ -7,8 +7,8 @@ defmodule HelloWeb.OrderController do
   action_fallback HelloWeb.FallbackController
 
   def index(conn, _params) do
-    order = Shop.list_order()
-    render(conn, "index.json", order: order)
+    orders = Shop.list_orders()
+    render(conn, "index.json", orders: orders)
   end
 
   def create(conn, %{"order" => order_params}) do

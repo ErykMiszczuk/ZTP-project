@@ -8,8 +8,8 @@ defmodule Hello.Repo.Migrations.CreateItems do
       add :discount, :decimal
       add :images, {:array, :string}
       add :description, :text
-      add :size, :map
-      add :color, :text
+      add :size, :decimal
+      add :color, :string
 
       timestamps()
     end

@@ -1,8 +1,8 @@
-defmodule Hello.Repo.Migrations.CreateCustomer do
+defmodule Hello.Repo.Migrations.CreateCustomers do
   use Ecto.Migration
 
   def change do
-    create table(:customer) do
+    create table(:customers) do
       add :firstName, :string
       add :lastName, :string
       add :city, :string
@@ -17,6 +17,6 @@ defmodule Hello.Repo.Migrations.CreateCustomer do
       timestamps()
     end
 
-    create index(:customer, [:orders])
+    create index(:customers, [:orders])
   end
 end

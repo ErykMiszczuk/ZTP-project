@@ -9,7 +9,7 @@ defmodule Hello.Shop.Item do
     field :images, {:array, :string}
     field :name, :string
     field :price, :decimal
-    field :size, :map
+    field :size, :decimal
 
     timestamps()
   end

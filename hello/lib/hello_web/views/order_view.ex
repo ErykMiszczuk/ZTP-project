@@ -2,8 +2,8 @@ defmodule HelloWeb.OrderView do
   use HelloWeb, :view
   alias HelloWeb.OrderView
 
-  def render("index.json", %{order: order}) do
-    %{data: render_many(order, OrderView, "order.json")}
+  def render("index.json", %{orders: orders}) do
+    %{data: render_many(orders, OrderView, "order.json")}
   end
 
   def render("show.json", %{order: order}) do

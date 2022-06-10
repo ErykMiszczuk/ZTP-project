@@ -2,7 +2,7 @@ defmodule Hello.Shop.Customer do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "customer" do
+  schema "customers" do
     field :city, :string
     field :email, :string
     field :firstName, :string
@@ -12,7 +12,7 @@ defmodule Hello.Shop.Customer do
     field :postCode, :string
     field :state, :string
     field :street, :string
-    field :orders, :id
+    has_many :orders, Hello.Shop.Order
 
     timestamps()
   end
@@ -22,5 +22,6 @@ defmodule Hello.Shop.Customer do
     customer
     |> cast(attrs, [:firstName, :lastName, :city, :state, :phoneNumber, :email, :street, :postCode, :password])
     |> validate_required([:firstName, :lastName, :city, :state, :phoneNumber, :email, :street, :postCode, :password])
+    |> cast_assoc(:orders)
   end
 end

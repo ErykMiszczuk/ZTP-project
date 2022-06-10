@@ -3,12 +3,13 @@ defmodule HelloWeb.CustomerController do
 
   alias Hello.Shop
   alias Hello.Shop.Customer
+  alias Hello.Shop.Order
 
   action_fallback HelloWeb.FallbackController
 
   def index(conn, _params) do
-    customer = Shop.list_customer()
-    render(conn, "index.json", customer: customer)
+    customers = Shop.list_customers()
+    render(conn, "index.json", customers: customers)
   end
 
   def create(conn, %{"customer" => customer_params}) do

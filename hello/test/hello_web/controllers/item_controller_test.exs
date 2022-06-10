@@ -12,7 +12,7 @@ defmodule HelloWeb.ItemControllerTest do
     images: [],
     name: "some name",
     price: "120.5",
-    size: %{}
+    size: "120.5"
   }
   @update_attrs %{
     color: "some updated color",
@@ -21,7 +21,7 @@ defmodule HelloWeb.ItemControllerTest do
     images: [],
     name: "some updated name",
     price: "456.7",
-    size: %{}
+    size: "456.7"
   }
   @invalid_attrs %{color: nil, description: nil, discount: nil, images: nil, name: nil, price: nil, size: nil}
 
@@ -51,7 +51,7 @@ defmodule HelloWeb.ItemControllerTest do
                "images" => [],
                "name" => "some name",
                "price" => "120.5",
-               "size" => %{}
+               "size" => "120.5"
              } = json_response(conn, 200)["data"]
     end
 
@@ -78,7 +78,7 @@ defmodule HelloWeb.ItemControllerTest do
                "images" => [],
                "name" => "some updated name",
                "price" => "456.7",
-               "size" => %{}
+               "size" => "456.7"
              } = json_response(conn, 200)["data"]
     end
 

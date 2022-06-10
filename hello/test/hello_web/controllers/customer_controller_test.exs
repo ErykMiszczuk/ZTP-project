@@ -34,7 +34,7 @@ defmodule HelloWeb.CustomerControllerTest do
   end
 
   describe "index" do
-    test "lists all customer", %{conn: conn} do
+    test "lists all customers", %{conn: conn} do
       conn = get(conn, Routes.customer_path(conn, :index))
       assert json_response(conn, 200)["data"] == []
     end

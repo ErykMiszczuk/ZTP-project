@@ -5,64 +5,6 @@ defmodule Hello.ShopFixtures do
   """
 
   @doc """
-  Generate a item.
-  """
-  def item_fixture(attrs \\ %{}) do
-    {:ok, item} =
-      attrs
-      |> Enum.into(%{
-        color: "some color",
-        description: "some description",
-        discount: "120.5",
-        id: 42,
-        images: [],
-        name: "some name",
-        price: "120.5",
-        size: %{}
-      })
-      |> Hello.Shop.create_item()
-
-    item
-  end
-
-  @doc """
-  Generate a item.
-  """
-  def item_fixture(attrs \\ %{}) do
-    {:ok, item} =
-      attrs
-      |> Enum.into(%{
-        color: "some color",
-        description: "some description",
-        discount: "120.5",
-        images: [],
-        name: "some name",
-        price: "120.5",
-        size: %{}
-      })
-      |> Hello.Shop.create_item()
-
-    item
-  end
-
-  @doc """
-  Generate a order.
-  """
-  def order_fixture(attrs \\ %{}) do
-    {:ok, order} =
-      attrs
-      |> Enum.into(%{
-        amount: "120.5",
-        dateCreated: ~N[2022-05-26 20:16:00],
-        dateFinished: ~N[2022-05-26 20:16:00],
-        discount: "120.5"
-      })
-      |> Hello.Shop.create_order()
-
-    order
-  end
-
-  @doc """
   Generate a customer.
   """
   def customer_fixture(attrs \\ %{}) do
@@ -85,19 +27,23 @@ defmodule Hello.ShopFixtures do
   end
 
   @doc """
-  Generate a stock.
+  Generate a item.
   """
-  def stock_fixture(attrs \\ %{}) do
-    {:ok, stock} =
+  def item_fixture(attrs \\ %{}) do
+    {:ok, item} =
       attrs
       |> Enum.into(%{
-        dateSelled: ~N[2022-05-26 20:26:00],
-        dateShipped: ~N[2022-05-26 20:26:00],
-        name: "some name"
+        color: "some color",
+        description: "some description",
+        discount: "120.5",
+        images: [],
+        name: "some name",
+        price: "120.5",
+        size: "120.5"
       })
-      |> Hello.Shop.create_stock()
+      |> Hello.Shop.create_item()
 
-    stock
+    item
   end
 
   @doc """
@@ -108,12 +54,28 @@ defmodule Hello.ShopFixtures do
       attrs
       |> Enum.into(%{
         amount: "120.5",
-        dateCreated: ~N[2022-05-26 20:31:00],
-        dateFinished: ~N[2022-05-26 20:31:00],
+        dateCreated: ~N[2022-06-04 17:59:00],
+        dateFinished: ~N[2022-06-04 17:59:00],
         discount: "120.5"
       })
       |> Hello.Shop.create_order()
 
     order
+  end
+
+  @doc """
+  Generate a stock.
+  """
+  def stock_fixture(attrs \\ %{}) do
+    {:ok, stock} =
+      attrs
+      |> Enum.into(%{
+        dateSelled: ~N[2022-06-04 19:36:00],
+        dateShipped: ~N[2022-06-04 19:36:00],
+        name: "some name"
+      })
+      |> Hello.Shop.create_stock()
+
+    stock
   end
 end

@@ -2,8 +2,8 @@ defmodule HelloWeb.CustomerView do
   use HelloWeb, :view
   alias HelloWeb.CustomerView
 
-  def render("index.json", %{customer: customer}) do
-    %{data: render_many(customer, CustomerView, "customer.json")}
+  def render("index.json", %{customers: customers}) do
+    %{data: render_many(customers, CustomerView, "customer.json")}
   end
 
   def render("show.json", %{customer: customer}) do
